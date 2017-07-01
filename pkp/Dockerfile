@@ -24,6 +24,20 @@ RUN wget https://github.com/pkp/ojs/archive/ojs-2_4_8-0.zip -O ojs.zip \
     && mv Test/swordappv2-php-library-master/* lib/pkp/lib/swordappv2/ \
     && cd /var/www/html \
     && rm -rf Test \
+    && cd plugins/reports/counter/classes/COUNTER/ \
+    && wget https://github.com/ulsdevteam/COUNTER/archive/master.zip -O counter.zip \
+    && unzip counter.zip \
+    && mv COUNTER-master/* . \
+    && rm -rf COUNTER-master \
+    && rm counter.zip \
+    && cd /var/www/html \
+    && cd lib/password_compat \
+    && wget https://github.com/ircmaxell/password_compat/archive/master.zip -O pass.zip \
+    && unzip pass.zip \
+    && mv password_compat-master/* . \
+    && rm -rf password_compat-master \
+    && rm pass.zip \
+    && cd /var/www/html \
     && find . | grep .git | xargs rm -rf 
 
 # Configuring OJS
