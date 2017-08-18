@@ -3,7 +3,7 @@ MAINTAINER Artur Luiz Oliveira <contato@arturluiz.com>
 
 # PHP Dependencies
 RUN apt-get update \
-    && apt-get install zlib1g-dev libxml2-dev wget unzip vim -y \
+    && apt-get install zlib1g-dev libxml2-dev wget zip unzip vim -y \
     && docker-php-ext-install mysqli mysql zip soap
 
 # Cloning and Cleaning OJS and PKP-LIB git repositories
